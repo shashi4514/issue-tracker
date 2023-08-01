@@ -1,0 +1,37 @@
+<nav
+  class="navbar navbar-expand-sm"
+  style="
+    background-image: linear-gradient(
+      to right,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet
+    );
+  "
+>
+  <div class="container-fluid">
+    <!-- Brand logo with a link to the homepage -->
+    <a
+      class="navbar-brand ms-4"
+      href="/"
+      style="font-weight: bolder; color: white"
+      >Issue Tracker
+    </a>
+
+    <!-- Conditional inclusion of different forms based on the value of the "title" variable -->
+    <% if( title === "Project Page"){ %> <%- include('_issue_form'); %> <%
+    }else{ %> <%- include('_project_form'); %> <% } %>
+  </div>
+
+  <style>
+    /* Styling for the brand logo on hover */
+    .navbar-brand:hover {
+      color: red;
+      position: fixed;
+    }
+  </style>
+</nav>
